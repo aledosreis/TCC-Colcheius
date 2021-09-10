@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Colcheius</string>
+    <string name="app_slogan">O seu instrutor musical digital</string>
+    <string name="text_login">Login</string>
+    <string name="text_create_account">Não tem uma conta? Crie uma aqui!</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Senha</string>
+    <string name="text_name">Nome</string>
+    <string name="text_register">Registrar</string>
 </resources>
