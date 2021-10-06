@@ -6,7 +6,7 @@
         android:title="@string/ranking" />
     <item
         android:id="@+id/lessons"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/ic_lesson"
         android:title="@string/lessons" />
     <item
         android:id="@+id/profile"
