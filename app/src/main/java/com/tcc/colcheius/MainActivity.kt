@@ -8,10 +8,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val lessonsFragment = LessonsFragment()
+        //val lessonsFragment = LessonsFragment()
+        val profileFragment = ProfileFragment()
 
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.container,lessonsFragment)
+            replace(R.id.container,profileFragment)
             commit()
         }
     }
