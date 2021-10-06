@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/lessons"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/lessons" />
-    <item
         android:id="@+id/ranking"
         android:icon="@drawable/ic_leaderboard"
         android:title="@string/ranking" />
+    <item
+        android:id="@+id/lessons"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/lessons" />
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_person"
