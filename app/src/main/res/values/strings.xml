@@ -10,4 +10,7 @@
     <string name="lessons">Lições</string>
     <string name="ranking">Ranking</string>
     <string name="profile">Perfil</string>
+    <string name="my_score">Minha Pontuação:</string>
+    <string name="logout">Sair da minha conta</string>
+    <string name="change_password">Alterar minha senha</string>
 </resources>
