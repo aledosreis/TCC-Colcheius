@@ -5,10 +5,16 @@
       <map>
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1125" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1125" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/drawable/ic_leaderboard.xml" value="0.21614583333333334" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/drawable/ic_lesson.xml" value="0.21614583333333334" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_start.xml" value="0.25" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_lessons.xml" value="0.2" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_ranking.xml" value="0.25" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/menu/menu.xml" value="0.2" />
       </map>
     </option>
   </component>
