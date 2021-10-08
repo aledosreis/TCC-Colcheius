@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "251595225129",
+    "project_id": "colcheius",
+    "storage_bucket": "colcheius.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251595225129:android:1b9dc5a8a5487fd358c438",
+        "android_client_info": {
+          "package_name": "com.tcc.colcheius"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251595225129-a5c4k7958e0oa8l3liclq5j5vfrbbpeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0BDUhqkBYnSz8IbHcDKA8nyyzixybbJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251595225129-a5c4k7958e0oa8l3liclq5j5vfrbbpeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
