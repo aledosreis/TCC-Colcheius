@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LessonsFragment">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_photo"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:id="@+id/user_greetings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,16 +27,6 @@
         app:layout_constraintStart_toEndOf="@id/user_photo"
         app:layout_constraintTop_toTopOf="@id/user_photo" />
 
-    <ImageView
-        android:id="@+id/user_score_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:src="@drawable/ic_lesson"
-        app:layout_constraintBottom_toBottomOf="@id/user_greetings"
-        app:layout_constraintStart_toEndOf="@id/user_greetings"
-        app:layout_constraintTop_toTopOf="@id/user_greetings" />
-
     <TextView
         android:id="@+id/user_core"
         android:layout_width="wrap_content"
@@ -44,10 +34,12 @@
         android:layout_marginStart="16dp"
         android:text="100"
         android:textColor="@color/black"
+        android:drawablePadding="8dp"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/user_score_icon"
-        app:layout_constraintStart_toEndOf="@id/user_score_icon"
-        app:layout_constraintTop_toTopOf="@id/user_score_icon" />
+        app:layout_constraintBottom_toBottomOf="@id/user_greetings"
+        app:layout_constraintStart_toEndOf="@id/user_greetings"
+        app:layout_constraintTop_toTopOf="@id/user_greetings"
+        app:drawableStartCompat="@drawable/ic_lesson" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lesson_list"
