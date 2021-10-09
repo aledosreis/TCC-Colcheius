@@ -52,4 +52,7 @@ dependencies {
 
     //CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Groupie (RecyclerView adapters library)
+    implementation "com.xwray:groupie:2.1.0"
 }
