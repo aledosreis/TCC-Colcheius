@@ -6,28 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:id="@+id/tv_slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_slogan"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@id/iv_logo"
         app:layout_constraintStart_toStartOf="@id/iv_logo"
         app:layout_constraintTop_toBottomOf="@id/iv_logo" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/bt_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -37,7 +38,7 @@
         app:layout_constraintStart_toStartOf="@id/tv_slogan"
         app:layout_constraintTop_toBottomOf="@id/tv_slogan" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:id="@+id/tv_new_acc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
