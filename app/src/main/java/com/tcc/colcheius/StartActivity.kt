@@ -11,8 +11,6 @@ class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        verifyAuthentication()
-
         setContentView(R.layout.activity_start)
 
         val btLogin = findViewById<Button>(R.id.bt_login)
@@ -24,14 +22,6 @@ class StartActivity : AppCompatActivity() {
 
         tvNewAccount.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
-        }
-    }
-
-    private fun verifyAuthentication() {
-        if (FirebaseAuth.getInstance().uid != null) {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
         }
     }
 }
