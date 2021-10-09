@@ -13,4 +13,6 @@
     <string name="my_score">Minha Pontuação:</string>
     <string name="logout">Sair da minha conta</string>
     <string name="change_password">Alterar minha senha</string>
+    <string name="bt_continue">Continuar</string>
+    <string name="bt_confirm">Confirmar</string>
 </resources>
