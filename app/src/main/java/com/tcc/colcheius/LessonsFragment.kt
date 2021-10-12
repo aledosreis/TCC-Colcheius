@@ -8,16 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 
 class LessonsFragment : Fragment() {
 
+    private var user : User? = null
+    private lateinit var userImage : ImageView
+    private lateinit var userGreetings : TextView
+    private lateinit var userScore : TextView
     private val modules = mutableListOf(
         "Módulo 1",
         "Módulo 2",
@@ -37,6 +42,11 @@ class LessonsFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_lessons, container, false)
+
+        userImage = view.findViewById(R.id.user_photo)
+        userGreetings = view.findViewById(R.id.user_greetings)
+        userScore = view.findViewById(R.id.user_score)
+
         val recyclerView: RecyclerView = view.findViewById(R.id.lesson_list)
 
         val adapter: GroupAdapter<ViewHolder> = GroupAdapter<ViewHolder>()
@@ -47,7 +57,27 @@ class LessonsFragment : Fragment() {
             adapter.add(ModuleItem(module))
         }
 
+        loadUserData()
+
         return view
+    }
+
+    /**
+     * Método responsável por recuperar os dados do usuário atual conectado.
+     */
+    private fun loadUserData() {
+        val connectedUserId = FirebaseAuth.getInstance().uid.toString()
+
+        FirebaseFirestore.getInstance().collection("users")
+            .document(connectedUserId)
+            .get()
+            .addOnSuccessListener { document ->
+                user = document?.toObject(User::class.java)
+                userScore.text = user?.totalScore.toString()
+                userGreetings.text = "Olá, ${user?.userName.toString()}"
+
+                Picasso.get().load(user?.profileImg).into(userImage)
+            }
     }
 
     private inner class ModuleItem(var moduleName: String) : Item<ViewHolder>() {
