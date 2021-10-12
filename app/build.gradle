@@ -55,4 +55,7 @@ dependencies {
 
     //Groupie (RecyclerView adapters library)
     implementation "com.xwray:groupie:2.1.0"
+
+    //Picasso (para carregar imagens)
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
