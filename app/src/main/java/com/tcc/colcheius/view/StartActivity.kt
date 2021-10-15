@@ -1,11 +1,11 @@
-package com.tcc.colcheius
+package com.tcc.colcheius.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import com.google.firebase.auth.FirebaseAuth
+import com.tcc.colcheius.R
 
 class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +17,7 @@ class StartActivity : AppCompatActivity() {
         val tvNewAccount = findViewById<TextView>(R.id.tv_new_acc)
 
         btLogin.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
         tvNewAccount.setOnClickListener {

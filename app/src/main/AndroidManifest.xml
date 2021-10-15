@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Colcheius">
         <activity
-            android:name=".QuestionsActivity"
+            android:name=".view.QuestionsActivity"
             android:exported="true" />
         <activity
-            android:name=".LessonTheroryActivity"
+            android:name=".view.LessonTheroryActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
@@ -26,18 +26,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".view.RegisterActivity"
             android:exported="true"
-            android:parentActivityName=".StartActivity" />
+            android:parentActivityName=".view.StartActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="true"
-            android:parentActivityName=".StartActivity" />
+            android:parentActivityName=".view.StartActivity" />
         <activity
-            android:name=".StartActivity"
+            android:name=".view.StartActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true" />
     </application>
 

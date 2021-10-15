@@ -1,4 +1,4 @@
-package com.tcc.colcheius
+package com.tcc.colcheius.model
 
 class User(
     val userId: String,

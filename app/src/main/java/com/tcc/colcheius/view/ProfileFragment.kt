@@ -1,4 +1,4 @@
-package com.tcc.colcheius
+package com.tcc.colcheius.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,8 @@ import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
+import com.tcc.colcheius.R
+import com.tcc.colcheius.model.User
 
 class ProfileFragment : Fragment() {
 

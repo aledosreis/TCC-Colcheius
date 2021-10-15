@@ -1,7 +1,8 @@
-package com.tcc.colcheius
+package com.tcc.colcheius.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tcc.colcheius.R
 
 class QuestionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.tcc.colcheius
+package com.tcc.colcheius.view
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -15,6 +15,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.tcc.colcheius.R
+import com.tcc.colcheius.model.User
 
 class RegisterActivity : AppCompatActivity() {
     private var selectedUri: Uri? = null
