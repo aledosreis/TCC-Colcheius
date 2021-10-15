@@ -1,9 +1,10 @@
-package com.tcc.colcheius
+package com.tcc.colcheius.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.tcc.colcheius.R
 
 class LessonTheroryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
