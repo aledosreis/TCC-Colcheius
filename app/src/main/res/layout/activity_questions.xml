@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="36dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,34 +32,38 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <RadioButton
+            android:id="@+id/answer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="33dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/answer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="33dp"
             android:layout_marginTop="20dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/answer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="33dp"
             android:layout_marginTop="20dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/answer4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="33dp"
             android:layout_marginTop="20dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quam non etiam sagittis at. Ultrices viverra vestibulum, eu volutpat."
             android:textSize="16sp" />
     </RadioGroup>
 
