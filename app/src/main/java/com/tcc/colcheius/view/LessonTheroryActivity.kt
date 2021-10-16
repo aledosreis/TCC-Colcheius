@@ -14,6 +14,7 @@ class LessonTheroryActivity : AppCompatActivity() {
         val btnContinue : Button = findViewById(R.id.btnContinue)
         btnContinue.setOnClickListener {
             startActivity(Intent(this, QuestionsActivity::class.java))
+            finish()
         }
     }
 }
