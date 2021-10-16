@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FinishModuleActivity">
+
+    <TextView
+        android:id="@+id/result_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Gabarito Módulo 1"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percent_correct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Você acertou 100% das questões"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_title" />
+
+    <TextView
+        android:id="@+id/question1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="38dp"
+        android:layout_marginTop="24dp"
+        android:text="O que é a música?"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/percent_correct" />
+
+    <TextView
+        android:id="@+id/your_answer1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sua resposta: Ritmo"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/question1"
+        app:layout_constraintStart_toStartOf="@id/question1"
+        app:layout_constraintTop_toBottomOf="@id/question1" />
+
+    <TextView
+        android:id="@+id/correct_answer1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resposta correta: A arte do som"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/question1"
+        app:layout_constraintStart_toStartOf="@id/question1"
+        app:layout_constraintTop_toBottomOf="@id/your_answer1" />
+
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="38dp"
+        android:layout_marginTop="24dp"
+        android:text="O que é a música?"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/correct_answer1" />
+
+    <TextView
+        android:id="@+id/your_answer2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sua resposta: Ritmo"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/question2"
+        app:layout_constraintStart_toStartOf="@id/question2"
+        app:layout_constraintTop_toBottomOf="@id/question2" />
+
+    <TextView
+        android:id="@+id/correct_answer2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resposta correta: A arte do som"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/question2"
+        app:layout_constraintStart_toStartOf="@id/question2"
+        app:layout_constraintTop_toBottomOf="@id/your_answer2" />
+
+    <TextView
+        android:id="@+id/question3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="38dp"
+        android:layout_marginTop="24dp"
+        android:text="O que é a música?"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/correct_answer2" />
+
+    <TextView
+        android:id="@+id/your_answer3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sua resposta: Ritmo"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/question3"
+        app:layout_constraintStart_toStartOf="@id/question3"
+        app:layout_constraintTop_toBottomOf="@id/question3" />
+
+    <TextView
+        android:id="@+id/correct_answer3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resposta correta: A arte do som"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/question3"
+        app:layout_constraintStart_toStartOf="@id/question3"
+        app:layout_constraintTop_toBottomOf="@id/your_answer3" />
+
+    <Button
+        android:id="@+id/bt_letsgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/lets_go"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

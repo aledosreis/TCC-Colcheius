@@ -1,5 +1,6 @@
 package com.tcc.colcheius.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -100,6 +101,8 @@ class QuestionsActivity : AppCompatActivity() {
             } else {
                 // Quando acabar a lição dar pontos extras se acertar todas as questões
                 if (correctQuestions == numQuestions) score+= 5
+                startActivity(Intent(this, FinishModuleActivity::class.java))
+                finish()
             }
         }
     }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Colcheius">
         <activity
+            android:name=".view.FinishModuleActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.QuestionsActivity"
             android:exported="true" />
         <activity
