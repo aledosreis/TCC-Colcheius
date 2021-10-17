@@ -8,9 +8,11 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import com.tcc.colcheius.R
+import com.tcc.colcheius.model.Answer
 import com.tcc.colcheius.model.Question
 
 class QuestionsActivity : AppCompatActivity() {
+
     private val questions: MutableList<Question> = mutableListOf(
         Question(
             text = "O que é música?",
@@ -41,25 +43,29 @@ class QuestionsActivity : AppCompatActivity() {
         )
     )
 
-    private lateinit var textQuestion : TextView
-    private lateinit var answersGroup : RadioGroup
-    private lateinit var answer1 : RadioButton
-    private lateinit var answer2 : RadioButton
-    private lateinit var answer3 : RadioButton
-    private lateinit var answer4 : RadioButton
-    private lateinit var btnConfirm : Button
+    private lateinit var textQuestion: TextView
+    private lateinit var answersGroup: RadioGroup
+    private lateinit var answer1: RadioButton
+    private lateinit var answer2: RadioButton
+    private lateinit var answer3: RadioButton
+    private lateinit var answer4: RadioButton
+    private lateinit var btnConfirm: Button
 
     private lateinit var currentQuestion: Question
-    private lateinit var answers : MutableList<String>
+    private lateinit var answers: MutableList<String>
     private var questionIndex = 0
     private val numQuestions = questions.size
 
     private var correctQuestions = 0
     private var score = 0
+    private var percent = 0
+    private val answerList = mutableListOf<Answer>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
+
+        intent = Intent(this, FinishModuleActivity::class.java)
 
         textQuestion = findViewById(R.id.question)
         answer1 = findViewById(R.id.answer1)
@@ -83,12 +89,21 @@ class QuestionsActivity : AppCompatActivity() {
         if (checkedId != -1) {
             var answerIndex = -1
 
-            when(checkedId) {
+            when (checkedId) {
                 R.id.answer1 -> answerIndex = 0
                 R.id.answer2 -> answerIndex = 1
                 R.id.answer3 -> answerIndex = 2
                 R.id.answer4 -> answerIndex = 3
             }
+
+            val answer = Answer(
+                questionText = currentQuestion.text,
+                answerSelected = answers[answerIndex],
+                correctAnswer = currentQuestion.answers[0]
+            )
+            answerList.add(answer)
+
+
             if (answers[answerIndex] == currentQuestion.answers[0]) {
                 correctQuestions++
                 score += 10
@@ -100,8 +115,15 @@ class QuestionsActivity : AppCompatActivity() {
                 setQuestion()
             } else {
                 // Quando acabar a lição dar pontos extras se acertar todas as questões
-                if (correctQuestions == numQuestions) score+= 5
-                startActivity(Intent(this, FinishModuleActivity::class.java))
+                if (correctQuestions == numQuestions) score += 5
+
+                percent = correctQuestions / numQuestions * 100
+
+                intent.putExtra("score", score)
+                intent.putExtra("percent", percent)
+                intent.putParcelableArrayListExtra("answerList", ArrayList(answerList))
+
+                startActivity(intent)
                 finish()
             }
         }
@@ -127,5 +149,10 @@ class QuestionsActivity : AppCompatActivity() {
         answer2.text = answers[1]
         answer3.text = answers[2]
         answer4.text = answers[3]
+
+    }
+
+    companion object {
+        lateinit var intent: Intent
     }
 }

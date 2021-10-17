@@ -21,7 +21,6 @@ import com.xwray.groupie.ViewHolder
 class RankingFragment : Fragment() {
 
     private lateinit var adapter : GroupAdapter<ViewHolder>
-    val mapUserScore = mutableMapOf("Alessandro" to 100, "Caynã" to 95, "Outro cara" to 50)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -31,10 +30,6 @@ class RankingFragment : Fragment() {
         adapter = GroupAdapter<ViewHolder>()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this.requireContext())
-
-//        for (item in mapUserScore) {
-//            adapter.add(RankingItem(item.key, item.value))
-//        }
 
         loadRanking()
 

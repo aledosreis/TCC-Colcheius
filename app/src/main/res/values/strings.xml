@@ -16,4 +16,7 @@
     <string name="bt_continue">Continuar</string>
     <string name="bt_confirm">Confirmar</string>
     <string name="lets_go">Vamos lá!</string>
+    <string name="lesson_score_text">Pontuação da lição:</string>
+    <string name="need_try_again">Você precisa revisar novamente!</string>
+    <string name="congrats_go_to_next_module">Você está pronto para o próximo módulo</string>
 </resources>
