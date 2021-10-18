@@ -58,7 +58,7 @@ class QuestionsActivity : AppCompatActivity() {
 
     private var correctQuestions = 0
     private var score = 0
-    private var percent = 0
+//    private var percent = 0
     private val answerList = mutableListOf<Answer>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -117,7 +117,7 @@ class QuestionsActivity : AppCompatActivity() {
                 // Quando acabar a lição dar pontos extras se acertar todas as questões
                 if (correctQuestions == numQuestions) score += 5
 
-                percent = correctQuestions / numQuestions * 100
+                val percent = correctQuestions.toFloat() / numQuestions.toFloat() * 100
 
                 intent.putExtra("score", score)
                 intent.putExtra("percent", percent)

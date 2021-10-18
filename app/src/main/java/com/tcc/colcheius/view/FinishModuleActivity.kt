@@ -22,9 +22,9 @@ class FinishModuleActivity : AppCompatActivity() {
     private lateinit var btGoNextModule : Button
     private lateinit var recyclerResultList : RecyclerView
 
-    private var module : Int = 0
-    private var percent : Int = 0
-    private var score : Int = 0
+    private var module = 0
+    private var percent = 0F
+    private var score = 0
     private lateinit var answersArray : ArrayList<Answer>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,13 +46,13 @@ class FinishModuleActivity : AppCompatActivity() {
 
         if (extras != null) {
             module = extras.getInt("module")
-            percent = extras.getInt("percent")
+            percent = extras.getFloat("percent")
             score = extras.getInt("score")
             answersArray = extras.getParcelableArrayList<Answer>("answerList") as ArrayList<Answer>
         }
 
         resultTitle.text = "GABARITO MÓDULO $module"
-        percentCorrect.text = "Você acertou $percent% das questões"
+        percentCorrect.text = "Você acertou ${String.format("%.2f",percent)}% das questões"
         scoreQtd.text = score.toString()
 
         if (percent > 0) textReady.text = getString(R.string.congrats_go_to_next_module)
