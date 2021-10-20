@@ -28,8 +28,6 @@ class QuestionsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
 
-        intent = Intent(this, FinishModuleActivity::class.java)
-
         questionViewModel = ViewModelProvider(this).get(QuestionViewModel::class.java)
 
         textQuestion = findViewById(R.id.question)
@@ -74,17 +72,17 @@ class QuestionsActivity : AppCompatActivity() {
 
             answersGroup.clearCheck()
 
-//            intent.putExtra("score", 100)
-//            intent.putExtra("percent", 100)
-//            intent.putParcelableArrayListExtra("answerList", ArrayList(answerList))
-
-//            startActivity(intent)
-//            finish()
+            if (questionViewModel.isQuestionsDone.value == true) {
+                val intent = Intent(this, FinishModuleActivity::class.java)
+                intent.putExtra("score", questionViewModel.score.value)
+                intent.putExtra("percent", questionViewModel.percent.value)
+                intent.putParcelableArrayListExtra(
+                    "answerList",
+                    ArrayList(questionViewModel.answerList.value?.toMutableList()!!)
+                )
+                startActivity(intent)
+                finish()
+            }
         }
     }
-
-
-companion object {
-    lateinit var intent: Intent
-}
 }
