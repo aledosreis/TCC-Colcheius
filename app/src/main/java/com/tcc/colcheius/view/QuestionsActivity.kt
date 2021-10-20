@@ -38,21 +38,20 @@ class QuestionsActivity : AppCompatActivity() {
 
         answersGroup = findViewById(R.id.answers)
 
-        questionViewModel.currentQuestion.observe(this, Observer { currentQuestion ->
-            textQuestion.text = currentQuestion.text
-        })
-
-        questionViewModel.answers.observe(this, Observer { answers ->
-            answer1.text = answers[0]
-            answer2.text = answers[1]
-            answer3.text = answers[2]
-            answer4.text = answers[3]
-        })
+        getQuestion()
 
         btnConfirm = findViewById(R.id.confirm_button)
         btnConfirm.setOnClickListener {
             checkAnswer()
         }
+    }
+
+    private fun getQuestion() {
+        textQuestion.text = questionViewModel.currentQuestion.value?.text
+        answer1.text = questionViewModel.answers.value?.get(0)
+        answer2.text = questionViewModel.answers.value?.get(1)
+        answer3.text = questionViewModel.answers.value?.get(2)
+        answer4.text = questionViewModel.answers.value?.get(3)
     }
 
     private fun checkAnswer() {
@@ -82,7 +81,7 @@ class QuestionsActivity : AppCompatActivity() {
                 )
                 startActivity(intent)
                 finish()
-            }
+            } else getQuestion()
         }
     }
 }
