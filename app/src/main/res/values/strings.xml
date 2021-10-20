@@ -19,4 +19,6 @@
     <string name="lesson_score_text">Pontuação da lição:</string>
     <string name="need_try_again">Você precisa revisar novamente!</string>
     <string name="congrats_go_to_next_module">Você está pronto para o próximo módulo</string>
+    <string name="complete_previous_first">Complete a lição anterior primeiro</string>
+    <string name="hello_user">Olá, %1$s!</string>
 </resources>

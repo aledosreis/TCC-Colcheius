@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +26,8 @@ class LessonsFragment : Fragment() {
     private lateinit var userImage : ImageView
     private lateinit var userGreetings : TextView
     private lateinit var userScore : TextView
+
+    private lateinit var adapter: GroupAdapter<ViewHolder>
     private val modules = mutableListOf(
         "Módulo 1",
         "Módulo 2",
@@ -51,17 +54,19 @@ class LessonsFragment : Fragment() {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.lesson_list)
 
-        val adapter: GroupAdapter<ViewHolder> = GroupAdapter<ViewHolder>()
+        adapter = GroupAdapter<ViewHolder>()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this.requireContext())
-
-        for (module in modules) {
-            adapter.add(ModuleItem(module))
-        }
 
         loadUserData()
 
         return view
+    }
+
+    private fun loadModules() {
+        for (module in modules) {
+            adapter.add(ModuleItem(module))
+        }
     }
 
     /**
@@ -76,9 +81,11 @@ class LessonsFragment : Fragment() {
             .addOnSuccessListener { document ->
                 user = document?.toObject(User::class.java)
                 userScore.text = user?.totalScore.toString()
-                userGreetings.text = "Olá, ${user?.userName.toString()}"
+                userGreetings.text = getString(R.string.hello_user, user?.userName)
 
                 Picasso.get().load(user?.profileImg).into(userImage)
+
+                loadModules()
             }
     }
 
@@ -87,12 +94,15 @@ class LessonsFragment : Fragment() {
             val tvModuleName: TextView = viewHolder.itemView.findViewById(R.id.module_name)
             val imageGoOn: ImageView = viewHolder.itemView.findViewById(R.id.go_on_btn)
             tvModuleName.text = moduleName
-            if (moduleName != "Módulo 1") {
+            if (moduleName !in user?.unlockedModules!!) {
                 imageGoOn.setImageResource(R.drawable.ic_lock)
-            }
-
-            imageGoOn.setOnClickListener {
-                startActivity(Intent(requireContext(), LessonTheroryActivity::class.java))
+                imageGoOn.setOnClickListener {
+                    Toast.makeText(requireContext(), getString(R.string.complete_previous_first), Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                imageGoOn.setOnClickListener {
+                    startActivity(Intent(requireContext(), LessonTheroryActivity::class.java))
+                }
             }
         }
 
