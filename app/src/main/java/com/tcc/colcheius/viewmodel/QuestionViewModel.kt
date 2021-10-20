@@ -11,32 +11,41 @@ class QuestionViewModel : ViewModel() {
 
     // lista de questões
     private lateinit var questions: MutableList<Question>
+
     private var questionIndex: Int
-
     private var answerIndex: Int
-
     private var numQuestions: Int
-
     private var correctQuestions: Int
-    private var score: Int
-    private val answerList = mutableListOf<Answer>()
 
-
+    // Variáveis observadas pela view
     private var _answers = MutableLiveData<MutableList<String>>()
     val answers: LiveData<MutableList<String>> get() = _answers
 
     private var _currentQuestion = MutableLiveData<Question>()
     val currentQuestion: LiveData<Question> get() = _currentQuestion
 
+    private var _isQuestionsDone = MutableLiveData<Boolean>()
+    val isQuestionsDone : LiveData<Boolean> get() = _isQuestionsDone
+
+    private var _percent = MutableLiveData<Float>()
+    val percent : LiveData<Float> get() = _percent
+
+    private var _score = MutableLiveData<Int>()
+    val score: LiveData<Int> get() = _score
+
+    private var _answerList = MutableLiveData<MutableList<Answer>>()
+    val answerList : LiveData<MutableList<Answer>> get() = _answerList
+
     init {
         getQuestionList()
         questionIndex = 0
         numQuestions = questions.size
         correctQuestions = 0
-        score = 0
+        _score.value = 0
         answerIndex = -1
-
+        _isQuestionsDone.value = false
         _answers.value = mutableListOf()
+        _answerList.value = mutableListOf()
         randomizeQuestions()
     }
 
@@ -50,7 +59,6 @@ class QuestionViewModel : ViewModel() {
         setQuestion()
     }
 
-
     /**
      * Método responsável por recuperar a pergunta atual e renderizar na tela
      */
@@ -60,18 +68,18 @@ class QuestionViewModel : ViewModel() {
         _answers.value?.shuffle()
     }
 
-    fun checkAnswer(anwerSelected: Int) {
+    fun checkAnswer(answerSelected: Int) {
 
         val answer = Answer(
             questionText = currentQuestion.value?.text.toString(),
-            answerSelected = answers.value?.get(anwerSelected).toString(),
+            answerSelected = answers.value?.get(answerSelected).toString(),
             correctAnswer = currentQuestion.value?.answers?.get(0).toString()
         )
-        answerList.add(answer)
+        _answerList.value?.add(answer)
 
-        if (answers.value?.get(anwerSelected) == currentQuestion.value?.answers?.get(0)) {
+        if (answers.value?.get(answerSelected) == currentQuestion.value?.answers?.get(0)) {
             correctQuestions++
-            score += 10
+            _score.value = score.value?.plus(10)
         }
 
         questionIndex++
@@ -79,8 +87,13 @@ class QuestionViewModel : ViewModel() {
             setQuestion()
         } else {
             // Quando acabar a lição dar pontos extras se acertar todas as questões
-            if (correctQuestions == numQuestions) score += 5
-            val percent = correctQuestions.toFloat() / numQuestions.toFloat() * 100
+            if (correctQuestions == numQuestions) _score.value = score.value?.plus(5)
+            _percent.value = correctQuestions.toFloat() / numQuestions.toFloat() * 100
+            onQuestionsDone()
         }
+    }
+
+    private fun onQuestionsDone() {
+        _isQuestionsDone.value = true
     }
 }
