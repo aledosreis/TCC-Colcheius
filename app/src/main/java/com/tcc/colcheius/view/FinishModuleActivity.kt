@@ -2,7 +2,6 @@ package com.tcc.colcheius.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
@@ -36,7 +35,7 @@ class FinishModuleActivity : AppCompatActivity() {
             intent.extras?.getInt("module")!!,
             intent.extras?.getInt("score")!!,
             intent.extras?.getFloat("percent")!!,
-            intent.extras?.getParcelableArrayList<Answer>("answerList")!!
+            intent.extras?.getParcelableArrayList("answerList")!!
         )
         finishModuleViewModel = ViewModelProvider(
             this,
@@ -78,8 +77,8 @@ class FinishModuleActivity : AppCompatActivity() {
             val correctAnswer: TextView = viewHolder.itemView.findViewById(R.id.correct_answer1)
 
             questionText.text = answer.questionText
-            answerText.text = "Sua resposta: ${answer.answerSelected}"
-            correctAnswer.text = "Resposta correta: ${answer.correctAnswer}"
+            answerText.text = getString(R.string.your_answer, answer.answerSelected)
+            correctAnswer.text = getString(R.string.correct_answer, answer.correctAnswer)
         }
 
         override fun getLayout(): Int {
