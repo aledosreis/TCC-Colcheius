@@ -21,4 +21,6 @@
     <string name="congrats_go_to_next_module">Você está pronto para o próximo módulo</string>
     <string name="complete_previous_first">Complete a lição anterior primeiro</string>
     <string name="hello_user">Olá, %1$s!</string>
+    <string name="your_answer">Sua resposta: %1$s</string>
+    <string name="correct_answer">Resposta correta: %1$s</string>
 </resources>
