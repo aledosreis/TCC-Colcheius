@@ -23,4 +23,15 @@
     <string name="hello_user">Olá, %1$s!</string>
     <string name="your_answer">Sua resposta: %1$s</string>
     <string name="correct_answer">Resposta correta: %1$s</string>
+    <!--Módulo 1-->
+    <string name="m1_title_module_one_the_music">A Música</string>
+    <string name="m1_text_explain_music">É uma forma de arte que se constitui basicamente em combinar sons e silêncios seguindo uma pré-organização ao longo do tempo. Pode-se dizer que a música é a arte de se expressar através dos sons.\n
+        Os elementos mais importantes da música são Melodia, Harmonia e Ritmo (que será abordado a seguir)</string>
+    <string name="m1_title_module_one_rhythm">Ritmo</string>
+    <string name="m1_text_explain_rhythm">O ritmo foi uma das primeiras manifestações musicais do homem, basicamente é a divisão ordenada do tempo (que pode ser representada por batidas constantes), combinando sons curtos, longos e silêncios.\n
+        \nAlgumas notas, por exemplo, representam 1 tempo (batida), outras somente meio tempo ou 4 tempos. Uma sequencia de três notas musicais pode dar origem a diversas composições diferentes apenas pela mudança do ritmo (ou andamento, que tem o mesmo significado na música).</string>
+    <string name="m1_title_module_one_metronome">Metrônomo</string>
+    <string name="m1_text_module_one_metronome">Um instrumento considerado \"o melhor amigo do músico\" é o metrônomo, que foi criado para medir o tempo e marcar o andamento de composições musicais. Podemos encontrar tanto metrônomos digitais (como em apps) ou manuais.</string>
+    <string name="m1_title_module_one_song_property">Propriedades do Som</string>
+    <string name="m1_text_explain_song_property">Todos os sons possuem as quatro principais propriedades do som, independentes entre si. Essas propriedades são: Timbre, Duração, Intensidade e Altura  Timbre- propriedade que nos permite reconhecer a origem do som, como por exemplo distinguir instrumentos diferentes ou vozes de pessoas diferentes  Duração- propriedade do som ser curto ou longo  Intensidade- propriedade do som ser fraco ou forte, podendo ser exemplificado como o volume do som. Quanto maior o volume, mais forte o som e quanto menor, mais fraco  Altura- propriedade do som ser grave, médio ou agudo. Para exemplo, se executarmos as teclas de um piano da esquerda para a direita, percebemos que o som começa grave e vai se tornando mais agudo conforme caminhamos pelas teclas do lado oposto</string>
 </resources>

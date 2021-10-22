@@ -16,7 +16,7 @@
             android:name=".view.QuestionsActivity"
             android:exported="true" />
         <activity
-            android:name=".view.LessonTheroryActivity"
+            android:name=".view.LessonTheoryActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"

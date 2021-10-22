@@ -81,7 +81,7 @@ class LessonsFragment : Fragment() {
             .addOnSuccessListener { document ->
                 user = document?.toObject(User::class.java)
                 userScore.text = user?.totalScore.toString()
-                userGreetings.text = getString(R.string.hello_user, user?.userName)
+                userGreetings.text = activity?.getString(R.string.hello_user, user?.userName)
 
                 Picasso.get().load(user?.profileImg).into(userImage)
 
@@ -101,7 +101,9 @@ class LessonsFragment : Fragment() {
                 }
             } else {
                 imageGoOn.setOnClickListener {
-                    startActivity(Intent(requireContext(), LessonTheroryActivity::class.java))
+                    val intent = Intent(requireContext(), LessonTheoryActivity::class.java)
+                    intent.putExtra("module", position+1)
+                    startActivity(intent)
                 }
             }
         }
