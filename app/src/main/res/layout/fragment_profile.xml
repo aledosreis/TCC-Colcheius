@@ -10,7 +10,7 @@
         android:id="@+id/profile_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:text="@string/profile"
         android:textAllCaps="true"
         android:textColor="@color/black"
@@ -35,12 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Alessandro"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_profile" />
+        app:layout_constraintTop_toBottomOf="@id/image_profile"
+        tools:text="Alessandro" />
 
     <TextView
         android:id="@+id/my_score"
@@ -59,14 +59,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="100"
         android:drawablePadding="8dp"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:drawableStartCompat="@drawable/ic_lesson"
         app:layout_constraintBottom_toBottomOf="@id/my_score"
         app:layout_constraintStart_toEndOf="@id/guideline"
         app:layout_constraintTop_toTopOf="@id/my_score"
-        app:drawableStartCompat="@drawable/ic_lesson" />
+        tools:text="100" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -88,7 +88,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/change_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,6 +95,7 @@
         android:text="@string/change_password"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

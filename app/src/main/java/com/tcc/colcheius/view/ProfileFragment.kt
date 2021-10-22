@@ -16,10 +16,10 @@ import com.tcc.colcheius.model.User
 
 class ProfileFragment : Fragment() {
 
-    private var user : User? = null
-    private lateinit var imageProfile : ImageView
-    private lateinit var userName : TextView
-    private lateinit var scoreTotal : TextView
+    private var user: User? = null
+    private lateinit var imageProfile: ImageView
+    private lateinit var userName: TextView
+    private lateinit var scoreTotal: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
         userName = view.findViewById(R.id.username)
         scoreTotal = view.findViewById(R.id.score_qtd)
 
-        val btLogout : TextView = view.findViewById(R.id.logout)
+        val btLogout: TextView = view.findViewById(R.id.logout)
         btLogout.setOnClickListener {
             logoutUser()
         }
@@ -55,7 +55,8 @@ class ProfileFragment : Fragment() {
                 scoreTotal.text = user?.totalScore.toString()
                 userName.text = user?.userName.toString()
 
-                Picasso.get().load(user?.profileImg).into(imageProfile)
+                if (user?.profileImg != "")
+                    Picasso.get().load(user?.profileImg).into(imageProfile)
             }
     }
 

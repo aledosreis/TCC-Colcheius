@@ -20,13 +20,15 @@ import com.xwray.groupie.ViewHolder
 
 class RankingFragment : Fragment() {
 
-    private lateinit var adapter : GroupAdapter<ViewHolder>
+    private lateinit var adapter: GroupAdapter<ViewHolder>
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         val view = inflater.inflate(R.layout.fragment_ranking, container, false)
-        val recyclerView : RecyclerView = view.findViewById(R.id.ranking_list)
+        val recyclerView: RecyclerView = view.findViewById(R.id.ranking_list)
         adapter = GroupAdapter<ViewHolder>()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this.requireContext())
@@ -54,16 +56,17 @@ class RankingFragment : Fragment() {
     }
 
 
-    private inner class RankingItem(val user : User) : Item<ViewHolder>() {
+    private inner class RankingItem(val user: User) : Item<ViewHolder>() {
         override fun bind(viewHolder: ViewHolder, position: Int) {
-            val tvUsername : TextView = viewHolder.itemView.findViewById(R.id.user_name)
-            val tvScore : TextView = viewHolder.itemView.findViewById(R.id.user_score)
-            val ivPhoto : ImageView = viewHolder.itemView.findViewById(R.id.profile_image)
+            val tvUsername: TextView = viewHolder.itemView.findViewById(R.id.user_name)
+            val tvScore: TextView = viewHolder.itemView.findViewById(R.id.user_score)
+            val ivPhoto: ImageView = viewHolder.itemView.findViewById(R.id.profile_image)
 
             tvUsername.text = user.userName
             tvScore.text = user.totalScore.toString()
 
-            Picasso.get().load(user.profileImg).into(ivPhoto)
+            if (user.profileImg != "")
+                Picasso.get().load(user.profileImg).into(ivPhoto)
         }
 
         override fun getLayout(): Int {
