@@ -22,10 +22,10 @@ import com.xwray.groupie.ViewHolder
 
 class LessonsFragment : Fragment() {
 
-    private var user : User? = null
-    private lateinit var userImage : ImageView
-    private lateinit var userGreetings : TextView
-    private lateinit var userScore : TextView
+    private var user: User? = null
+    private lateinit var userImage: ImageView
+    private lateinit var userGreetings: TextView
+    private lateinit var userScore: TextView
 
     private lateinit var adapter: GroupAdapter<ViewHolder>
     private val modules = mutableListOf(
@@ -81,9 +81,11 @@ class LessonsFragment : Fragment() {
             .addOnSuccessListener { document ->
                 user = document?.toObject(User::class.java)
                 userScore.text = user?.totalScore.toString()
+                userScore.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lesson, 0, 0, 0)
                 userGreetings.text = activity?.getString(R.string.hello_user, user?.userName)
 
-                Picasso.get().load(user?.profileImg).into(userImage)
+                if (user?.profileImg != "")
+                    Picasso.get().load(user?.profileImg).into(userImage)
 
                 loadModules()
             }
@@ -97,12 +99,16 @@ class LessonsFragment : Fragment() {
             if (moduleName !in user?.unlockedModules!!) {
                 imageGoOn.setImageResource(R.drawable.ic_lock)
                 imageGoOn.setOnClickListener {
-                    Toast.makeText(requireContext(), getString(R.string.complete_previous_first), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.complete_previous_first),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             } else {
                 imageGoOn.setOnClickListener {
                     val intent = Intent(requireContext(), LessonTheoryActivity::class.java)
-                    intent.putExtra("module", position+1)
+                    intent.putExtra("module", position + 1)
                     startActivity(intent)
                 }
             }
