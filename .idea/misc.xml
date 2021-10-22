@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/Colcheius/app/src/main/res/layout/fragment_lessons.xml" value="0.16111111111111112" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/drawable/bg_splash.xml" value="0.21614583333333334" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/drawable/ic_account_circle.xml" value="0.21614583333333334" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.21614583333333334" />
@@ -22,9 +21,13 @@
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_start.xml" value="0.25" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_lessons.xml" value="0.2" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_metronome_theory.xml" value="0.2" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_ranking.xml" value="0.25" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_ritm_theory.xml" value="0.25" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_song_property.xml" value="0.2" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_test.xml" value="0.1" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_what_is_music.xml" value="0.2" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/item_list_module.xml" value="0.25" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/item_list_ranking.xml" value="0.2" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/item_list_results.xml" value="0.2" />
@@ -32,7 +35,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
