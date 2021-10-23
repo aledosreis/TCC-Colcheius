@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import com.tcc.colcheius.R
 
 class SongPropertyTheoryFragment : Fragment() {
@@ -17,9 +18,14 @@ class SongPropertyTheoryFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_song_property, container, false)
 
+        val module = activity?.intent?.extras?.getInt("module")
+
         val btnContinue : Button = view.findViewById(R.id.btnContinue)
         btnContinue.setOnClickListener {
-            startActivity(Intent(requireContext(), QuestionsActivity::class.java))
+//            Toast.makeText(requireContext(), module.toString(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), QuestionsActivity::class.java)
+            intent.putExtra("module", module)
+            startActivity(intent)
             activity?.finish()
         }
 
