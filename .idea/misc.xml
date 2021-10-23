@@ -20,6 +20,8 @@
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_questions.xml" value="0.25" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/activity_start.xml" value="0.25" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/dialog_answer_correct.xml" value="0.2" />
+        <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/dialog_answer_incorrect.xml" value="0.2" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_lessons.xml" value="0.2" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_metronome_theory.xml" value="0.2" />
         <entry key="..\:/Projetos/Colcheius/app/src/main/res/layout/fragment_profile.xml" value="0.25" />

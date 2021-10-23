@@ -38,4 +38,6 @@
     <string name="m1_text_explain_song_property_duracao"><b>Duração:</b> propriedade do som ser curto ou longo</string>
     <string name="m1_text_explain_song_property_intensidade"><b>Intensidade:</b> propriedade do som ser fraco ou forte, podendo ser exemplificado como o volume do som. Quanto maior o volume, mais forte o som e quanto menor, mais fraco</string>
     <string name="m1_text_explain_song_property_altura"><b>Altura:</b> propriedade do som ser grave, médio ou agudo. Para exemplo, se executarmos as teclas de um piano da esquerda para a direita, percebemos que o som começa grave e vai se tornando mais agudo conforme caminhamos pelas teclas do lado oposto</string>
+    <string name="text_correct_answer">Muito bem! Você acertou!</string>
+    <string name="text_incorrect_answer">Ops! Você errou!</string>
 </resources>
