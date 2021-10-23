@@ -1,5 +1,7 @@
 package com.tcc.colcheius.view
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -34,11 +36,21 @@ class ProfileFragment : Fragment() {
 
         val btLogout: TextView = view.findViewById(R.id.logout)
         btLogout.setOnClickListener {
-            logoutUser()
+            confirmLogout()
         }
 
         loadUserData()
         return view
+    }
+
+    private fun confirmLogout() {
+        AlertDialog.Builder(requireContext())
+            .setTitle("CONFIRMAÇÃO")
+            .setMessage("Tem certeza que deseja sair?")
+            .setPositiveButton("SAIR", DialogInterface.OnClickListener { _, _ ->
+                logoutUser()
+            })
+            .setNegativeButton("CANCELAR",null).show()
     }
 
     /**
