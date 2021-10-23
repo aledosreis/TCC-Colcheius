@@ -7,7 +7,7 @@ import com.tcc.colcheius.data.QuestionDataSource
 import com.tcc.colcheius.model.Answer
 import com.tcc.colcheius.model.Question
 
-class QuestionViewModel : ViewModel() {
+class QuestionViewModel(module : Int) : ViewModel() {
 
     // lista de questões
     private lateinit var questions: MutableList<Question>
@@ -33,10 +33,14 @@ class QuestionViewModel : ViewModel() {
     private var _score = MutableLiveData<Int>()
     val score: LiveData<Int> get() = _score
 
+    private var _module = MutableLiveData<Int>()
+    val module: LiveData<Int> get() = _module
+
     private var _answerList = MutableLiveData<MutableList<Answer>>()
     val answerList : LiveData<MutableList<Answer>> get() = _answerList
 
     init {
+        _module.value = module
         getQuestionList()
         questionIndex = 0
         numQuestions = questions.size
@@ -50,7 +54,9 @@ class QuestionViewModel : ViewModel() {
     }
 
     private fun getQuestionList() {
-        questions = QuestionDataSource().getModuleOneQuestions()
+        when(module.value) {
+            1 -> questions = QuestionDataSource().getModuleOneQuestions()
+        }
     }
 
     private fun randomizeQuestions() {

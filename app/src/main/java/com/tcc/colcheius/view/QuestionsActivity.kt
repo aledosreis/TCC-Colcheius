@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tcc.colcheius.viewmodel.QuestionViewModel
 import com.tcc.colcheius.R
+import com.tcc.colcheius.viewmodel.FinishModuleViewModelFactory
+import com.tcc.colcheius.viewmodel.QuestionViewModelFactory
 
 class QuestionsActivity : AppCompatActivity() {
 
@@ -23,12 +25,14 @@ class QuestionsActivity : AppCompatActivity() {
     private lateinit var btnConfirm: Button
 
     private lateinit var questionViewModel: QuestionViewModel
+    private lateinit var questionViewModelFactory: QuestionViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
 
-        questionViewModel = ViewModelProvider(this).get(QuestionViewModel::class.java)
+        questionViewModelFactory = QuestionViewModelFactory(intent.extras?.getInt("module")!!)
+        questionViewModel = ViewModelProvider(this, questionViewModelFactory).get(QuestionViewModel::class.java)
 
         textQuestion = findViewById(R.id.question)
         answer1 = findViewById(R.id.answer1)
@@ -73,6 +77,7 @@ class QuestionsActivity : AppCompatActivity() {
 
             if (questionViewModel.isQuestionsDone.value == true) {
                 val intent = Intent(this, FinishModuleActivity::class.java)
+                intent.putExtra("module", questionViewModel.module.value)
                 intent.putExtra("score", questionViewModel.score.value)
                 intent.putExtra("percent", questionViewModel.percent.value)
                 intent.putParcelableArrayListExtra(
