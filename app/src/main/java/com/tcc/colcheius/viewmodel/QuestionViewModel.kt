@@ -27,6 +27,9 @@ class QuestionViewModel(module : Int) : ViewModel() {
     private var _isQuestionsDone = MutableLiveData<Boolean>()
     val isQuestionsDone : LiveData<Boolean> get() = _isQuestionsDone
 
+    private var _isAnswerCorrect = MutableLiveData<Boolean>()
+    val isAnswerCorrect : LiveData<Boolean> get() = _isAnswerCorrect
+
     private var _percent = MutableLiveData<Float>()
     val percent : LiveData<Float> get() = _percent
 
@@ -48,6 +51,7 @@ class QuestionViewModel(module : Int) : ViewModel() {
         _score.value = 0
         answerIndex = -1
         _isQuestionsDone.value = false
+        _isAnswerCorrect.value = false
         _answers.value = mutableListOf()
         _answerList.value = mutableListOf()
         randomizeQuestions()
@@ -86,7 +90,8 @@ class QuestionViewModel(module : Int) : ViewModel() {
         if (answers.value?.get(answerSelected) == currentQuestion.value?.answers?.get(0)) {
             correctQuestions++
             _score.value = score.value?.plus(10)
-        }
+            _isAnswerCorrect.value = true
+        } else _isAnswerCorrect.value = false
 
         questionIndex++
         if (questionIndex < numQuestions) {

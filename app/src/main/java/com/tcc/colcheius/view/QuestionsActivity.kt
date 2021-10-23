@@ -3,10 +3,15 @@ package com.tcc.colcheius.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tcc.colcheius.viewmodel.QuestionViewModel
@@ -72,9 +77,30 @@ class QuestionsActivity : AppCompatActivity() {
             }
 
             questionViewModel.checkAnswer(answerIndex)
+            showDialog()
+        }
+    }
 
-            answersGroup.clearCheck()
+    private fun showDialog() {
+        val view : View = if (questionViewModel.isAnswerCorrect.value!!) {
+            layoutInflater.inflate(R.layout.dialog_answer_correct, null)
+        } else layoutInflater.inflate(R.layout.dialog_answer_incorrect, null)
 
+        val btDialogContinue : Button = view.findViewById(R.id.bt_continue)
+
+        val builder = AlertDialog.Builder(this)
+            .setView(view)
+            .setCancelable(false)
+        val dialog = builder.create()
+
+        val window : Window? = dialog.window
+        val wlp : WindowManager.LayoutParams? = window?.attributes
+        wlp?.gravity = Gravity.BOTTOM
+        wlp?.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND
+        window?.attributes = wlp
+
+        dialog.show()
+        btDialogContinue.setOnClickListener {
             if (questionViewModel.isQuestionsDone.value == true) {
                 val intent = Intent(this, FinishModuleActivity::class.java)
                 intent.putExtra("module", questionViewModel.module.value)
@@ -86,7 +112,11 @@ class QuestionsActivity : AppCompatActivity() {
                 )
                 startActivity(intent)
                 finish()
-            } else getQuestion()
+            } else {
+                getQuestion()
+                answersGroup.clearCheck()
+                dialog.dismiss()
+            }
         }
     }
 }
