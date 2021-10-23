@@ -37,13 +37,13 @@ class FinishModuleViewModel(
         unlockNextModule()
     }
 
-    fun updateUserTotalScore() {
+    private fun updateUserTotalScore() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid.toString()
         FirebaseFirestore.getInstance().collection("users").document(userId)
             .update("totalScore", FieldValue.increment(score.value?.toLong()!!))
     }
 
-    fun unlockNextModule() {
+    private fun unlockNextModule() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid.toString()
         if (percent.value!! >= 60) {
             FirebaseFirestore.getInstance().collection("users").document(userId)
