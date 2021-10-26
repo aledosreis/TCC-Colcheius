@@ -32,6 +32,15 @@ class QuestionDataSource {
                     "O melhor amigo do músico",
                     "Todos os sons que possuem tempo e silêncio"
                 )
+            ),
+            Question(
+                text = "Entre as propriedades do som, qual das seguintes nos permite reconhecer a origem do som?",
+                answers = listOf(
+                    "Timbre",
+                    "Melodia",
+                    "Altura",
+                    "Intensidade"
+                )
             )
         )
     }
