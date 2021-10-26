@@ -57,7 +57,7 @@ class FinishModuleActivity : AppCompatActivity() {
         percentCorrect.text = "Você acertou ${String.format("%.2f", finishModuleViewModel.percent.value)}% das questões"
         scoreQtd.text = finishModuleViewModel.score.value.toString()
 
-        if (finishModuleViewModel.percent.value!! > 0) textReady.text =
+        if (finishModuleViewModel.percent.value!! > 60) textReady.text =
             getString(R.string.congrats_go_to_next_module)
         else textReady.text = getString(R.string.need_try_again)
 
