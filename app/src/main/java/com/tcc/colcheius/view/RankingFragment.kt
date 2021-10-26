@@ -62,7 +62,7 @@ class RankingFragment : Fragment() {
             val tvScore: TextView = viewHolder.itemView.findViewById(R.id.user_score)
             val ivPhoto: ImageView = viewHolder.itemView.findViewById(R.id.profile_image)
 
-            tvUsername.text = user.userName
+            tvUsername.text = "#${position+1} ${user.userName}"
             tvScore.text = user.totalScore.toString()
 
             if (user.profileImg != "")
