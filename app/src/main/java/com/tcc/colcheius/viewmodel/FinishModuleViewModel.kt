@@ -45,7 +45,7 @@ class FinishModuleViewModel(
 
     private fun unlockNextModule() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid.toString()
-        if (percent.value!! >= 60) {
+        if (percent.value!! >= 70) {
             FirebaseFirestore.getInstance().collection("users").document(userId)
                 .update("unlockedModules", FieldValue.arrayUnion("Módulo ${module.value?.plus(1)}"))
         }
