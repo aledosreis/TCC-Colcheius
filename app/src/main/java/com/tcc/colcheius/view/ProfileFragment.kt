@@ -69,6 +69,8 @@ class ProfileFragment : Fragment() {
 
                 if (user?.profileImg != "")
                     Picasso.get().load(user?.profileImg).into(imageProfile)
+                else
+                    imageProfile.setImageResource(R.drawable.ic_account_circle)
             }
     }
 
