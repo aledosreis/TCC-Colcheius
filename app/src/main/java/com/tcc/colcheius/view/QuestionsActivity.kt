@@ -1,5 +1,6 @@
 package com.tcc.colcheius.view
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,11 +13,9 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tcc.colcheius.viewmodel.QuestionViewModel
 import com.tcc.colcheius.R
-import com.tcc.colcheius.viewmodel.FinishModuleViewModelFactory
 import com.tcc.colcheius.viewmodel.QuestionViewModelFactory
 
 class QuestionsActivity : AppCompatActivity() {
@@ -118,5 +117,15 @@ class QuestionsActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
         }
+    }
+
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+            .setTitle("TEM CERTEZA QUE DESEJA SAIR?")
+            .setMessage("Você vai perder seu progresso.")
+            .setPositiveButton("SAIR", DialogInterface.OnClickListener { _, _ ->
+                finish()
+            })
+            .setNegativeButton("CANCELAR",null).show()
     }
 }
