@@ -67,6 +67,8 @@ class RankingFragment : Fragment() {
 
             if (user.profileImg != "")
                 Picasso.get().load(user.profileImg).into(ivPhoto)
+            else
+                ivPhoto.setImageResource(R.drawable.ic_account_circle)
         }
 
         override fun getLayout(): Int {
