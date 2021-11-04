@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MetronomeTheoryFragment">
+    tools:context=".view.FigurasTwoFragment">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/m1_title_module_one_metronome"
-        android:textColor="@color/black"
+        android:text="@string/m2_title_figuras"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,29 +20,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/content1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:lineSpacingExtra="8dp"
-        android:text="@string/m1_text_module_one_metronome"
-        android:textColor="@color/black"
+        android:text="@string/m2_text_explain_figuras2"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
     <ImageView
+        android:id="@+id/img_tbl_figura"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="8dp"
         android:layout_marginVertical="16dp"
-        android:src="@mipmap/metronome"
+        android:src="@mipmap/figuras"
         app:layout_constraintBottom_toTopOf="@id/btnContinue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text1" />
+        app:layout_constraintTop_toBottomOf="@id/content1" />
 
     <Button
         android:id="@+id/btnContinue"

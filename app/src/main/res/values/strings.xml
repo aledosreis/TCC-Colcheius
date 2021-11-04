@@ -40,4 +40,14 @@
     <string name="m1_text_explain_song_property_altura"><b>Altura:</b> propriedade do som ser grave, médio ou agudo. Para exemplo, se executarmos as teclas de um piano da esquerda para a direita, percebemos que o som começa grave e vai se tornando mais agudo conforme caminhamos pelas teclas do lado oposto</string>
     <string name="text_correct_answer">Muito bem! Você acertou!</string>
     <string name="text_incorrect_answer">Ops! Você errou!</string>
+    <!--Módulo 2-->
+    <string name="m2_title_figuras">Figuras</string>
+    <string name="m2_text_explain_figuras">As diferentes durações de sons podem ser representados por Figuras, que são símbolos utilizados para representar os tempos de uma música, cada uma tem seu nome e também um número pelo qual é representada. Toda figura de som tem sua respectiva figura de silêncio, assim como na imagem abaixo</string>
+    <string name="m2_text_explain_figuras2">Seguindo a ordem das figuras na vista na tabela anterior, podemos perceber que conforme avançamos (descendo a partir da Semibreve), as figuras valem a metade de sua anterior, assim como quando fazemos o processo contrário (subindo a partir da Semifusa) as figuras seguintes valem o dobro de sua anterior. Isso pode ser melhor representado da seguinte forma</string>
+    <string name="m2_text_explain_figuras3">Podemos concluir que 2 Mínimas tem o mesmo valor que 1 Semibreve, 2 Semínimas tem o mesmo valor que 1 Mínima e assim por diante, também como 32 Fusas equivalem a 1 Semibreve.</string>
+    <string name="m2_text_explain_figuras4">Pode-se notar na imagem anterior que algumas figuras podem aparecer ligadas por uma barra de união. Duas colcheias, uma ao lado da outra (esquerda) podem ser ligadas (direita).</string>
+    <string name="m2_title_grave_agudo">Sons Graves e Agudos</string>
+    <string name="m2_text_explain_grave_agudo">Altura do som é um termo utilizado para definir se um som é agudo ou grave. Sons altos são agudos e sons baixos são graves. O que faz um som ficar agudo ou grave é a frequência do som. Quanto maior a frequência, mais agudo (alto) é o som; e quanto menor a frequência, mais grave (baixo) é o som. Essa frequência corresponde aos ciclos (oscilações por segundo) da onda sonora.</string>
+    <string name="m2_text_explain_grave_agudo2"> Assim como abordado no módulo anterior, se executarmos as teclas de um piano da esquerda para a direita, percebemos que o som começa grave e vai se tornando mais agudo conforme caminhamos pelas teclas até o lado oposto.</string>
+    <string name="m2_text_explain_grave_agudo3">Obs: É importante não confundir altura do som com volume (ou intensidade) do som. A intensidade faz o som ser fraco ou forte, independente dele ser grave ou agudo.</string>
 </resources>
