@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.tcc.colcheius.R
+import com.tcc.colcheius.view.modulo1.WhatIsMusicTheoryFragment
+import com.tcc.colcheius.view.modulo2.FigurasFragment
 
 class LessonTheoryActivity : AppCompatActivity() {
 
