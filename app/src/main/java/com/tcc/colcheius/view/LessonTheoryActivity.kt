@@ -15,9 +15,11 @@ class LessonTheoryActivity : AppCompatActivity() {
 
 
         val whatIsMusicTheoryFragment = WhatIsMusicTheoryFragment()
+        val figurasFragment = FigurasFragment()
 
         when(module) {
             1 -> changeScreen(fragment = whatIsMusicTheoryFragment)
+            2 -> changeScreen(fragment = figurasFragment)
         }
     }
 
