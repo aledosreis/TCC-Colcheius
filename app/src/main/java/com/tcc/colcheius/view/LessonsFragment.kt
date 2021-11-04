@@ -2,6 +2,7 @@ package com.tcc.colcheius.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -77,9 +78,13 @@ class LessonsFragment : Fragment() {
 
         FirebaseFirestore.getInstance().collection("users")
             .document(connectedUserId)
-            .get()
-            .addOnSuccessListener { document ->
-                user = document?.toObject(User::class.java)
+            .addSnapshotListener { snapchot, e ->
+                if (e!=null) {
+                    Log.e("LessonsFragment", "Erro ao buscar dados.", e)
+                    return@addSnapshotListener
+                }
+
+                user = snapchot?.toObject(User::class.java)
                 userScore.text = user?.totalScore.toString()
                 userScore.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lesson, 0, 0, 0)
                 userGreetings.text = activity?.getString(R.string.hello_user, user?.userName)
