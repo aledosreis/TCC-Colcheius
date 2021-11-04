@@ -60,6 +60,7 @@ class QuestionViewModel(module : Int) : ViewModel() {
     private fun getQuestionList() {
         when(module.value) {
             1 -> questions = QuestionDataSource().getModuleOneQuestions()
+            2 -> questions = QuestionDataSource().getModuleTwoQuestions()
         }
     }
 
