@@ -57,6 +57,7 @@ class LessonsFragment : Fragment() {
     }
 
     private fun loadModules() {
+        adapter.clear()
         for (module in modules) {
             adapter.add(ModuleItem(module))
         }
