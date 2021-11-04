@@ -44,4 +44,46 @@ class QuestionDataSource {
             )
         )
     }
+
+    fun getModuleTwoQuestions(): MutableList<Question> {
+        return  mutableListOf(
+            Question(
+                text = "Qual figura tem a maior duração?",
+                answers = listOf(
+                    "Semibreve",
+                    "Colcheia",
+                    "Mínima",
+                    "Fusa"
+                )
+            ),
+            Question(
+                text = "Qual das alternativas abaixo contém a figura de MAIOR duração entre elas?",
+                answers = listOf(
+                    "Semínima",
+                    "Colcheia",
+                    "Semifusa",
+                    "Semicolcheia"
+                )
+            ),
+            Question(
+                text = "Qual das alternativas abaixo contém a figura de MENOR duração entre elas?",
+                answers = listOf(
+                    "Semicolcheia",
+                    "Semibreve",
+                    "Colcheia",
+                    "Mínima"
+                )
+            ),
+            Question(
+                text = "Quantas Mínimas seriam necessárias para representar o mesmo valor de 1 Semibreve?",
+                answers = listOf(
+                    "4",
+                    "2",
+                    "6",
+                    "Nenhuma das alternativas anteriores"
+                )
+            )
+        )
+
+    }
 }
