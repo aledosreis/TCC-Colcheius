@@ -77,8 +77,8 @@ class QuestionDataSource {
             Question(
                 text = "Quantas Mínimas seriam necessárias para representar o mesmo valor de 1 Semibreve?",
                 answers = listOf(
-                    "4",
                     "2",
+                    "4",
                     "6",
                     "Nenhuma das alternativas anteriores"
                 )
