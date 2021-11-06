@@ -7,11 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
+import android.view.View
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import com.google.firebase.auth.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -21,10 +20,15 @@ import com.tcc.colcheius.model.User
 class RegisterActivity : AppCompatActivity() {
     private var selectedUri: Uri? = null
     private lateinit var ivProfile : ImageView
+    private lateinit var progressRegister: ProgressBar
+    private lateinit var textProgressRegister: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        progressRegister = findViewById(R.id.progressRegister)
+        textProgressRegister = findViewById(R.id.textProgressRegister)
 
         ivProfile = findViewById(R.id.iv_profile_photo)
         val etName : EditText = findViewById(R.id.et_name)
@@ -42,8 +46,11 @@ class RegisterActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             //Verificar se todos os campos foram preenchidos.
-            if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty())
+            if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                progressRegister.visibility = View.VISIBLE
+                textProgressRegister.visibility = View.VISIBLE
                 registerUser(name, email, password)
+            }
             else Toast.makeText(applicationContext, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
         }
     }
@@ -70,13 +77,20 @@ class RegisterActivity : AppCompatActivity() {
     private fun registerUser(name: String, email : String, password : String) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
+                progressRegister.visibility = View.INVISIBLE
+                textProgressRegister.visibility = View.INVISIBLE
                 if (it.isSuccessful) {
                     val createdUserUid = it.result?.user?.uid.toString()
                     createUserData(name, createdUserUid)
                 }
             }
-            .addOnFailureListener {
-                Log.e("RegisterActivity", it.message.toString())
+            .addOnFailureListener { e ->
+                Log.e("RegisterAct", e.message, e)
+                when(e) {
+                    is FirebaseAuthWeakPasswordException -> errorDialog("A senha precisa ter pelo menos 6 cacacteres.")
+                    is FirebaseAuthInvalidCredentialsException -> errorDialog("Email inválido.")
+                    is FirebaseAuthUserCollisionException -> errorDialog("Já existe um usuário cadastrado com este email.")
+                }
             }
     }
 
@@ -96,10 +110,15 @@ class RegisterActivity : AppCompatActivity() {
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                                 startActivity(intent)
                             }
+                            .addOnFailureListener {
+                                FirebaseAuth.getInstance().currentUser?.delete()
+                                FirebaseStorage.getInstance().getReference("/users/${createdUserUid}").delete()
+                            }
                     }
                 }
                 .addOnFailureListener {
                     Log.e("Register/Storage", it.message.toString())
+                    FirebaseAuth.getInstance().currentUser?.delete()
                 }
         }
         else {
@@ -112,6 +131,18 @@ class RegisterActivity : AppCompatActivity() {
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     startActivity(intent)
                 }
+                .addOnFailureListener {
+                    FirebaseAuth.getInstance().currentUser?.delete()
+                }
         }
+    }
+
+    private fun errorDialog(message : String) {
+        AlertDialog.Builder(this)
+            .setTitle("Erro no cadastro")
+            .setMessage(message)
+            .setCancelable(false)
+            .setPositiveButton("OK", null)
+            .show()
     }
 }
