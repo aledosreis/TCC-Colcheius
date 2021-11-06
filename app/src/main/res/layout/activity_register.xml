@@ -84,4 +84,27 @@
         app:layout_constraintStart_toStartOf="@id/til_password"
         app:layout_constraintTop_toBottomOf="@id/til_password" />
 
+    <ProgressBar
+        android:id="@+id/progressRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@id/textProgressRegister"
+        app:layout_constraintStart_toStartOf="@id/bt_register"
+        app:layout_constraintTop_toBottomOf="@id/bt_register" />
+
+    <TextView
+        android:id="@+id/textProgressRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_creating_account"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/progressRegister"
+        app:layout_constraintEnd_toEndOf="@id/bt_register"
+        app:layout_constraintStart_toEndOf="@id/progressRegister"
+        app:layout_constraintTop_toTopOf="@id/progressRegister" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,8 @@
     <string name="text_password">Senha</string>
     <string name="text_name">Nome</string>
     <string name="text_register">Registrar</string>
+    <string name="text_creating_account">Criando sua conta…</string>
+    <string name="text_singin_in">Conectando…</string>
     <string name="lessons">Lições</string>
     <string name="hello_user">Olá, %1$s!</string>
     <string name="ranking">Ranking</string>
