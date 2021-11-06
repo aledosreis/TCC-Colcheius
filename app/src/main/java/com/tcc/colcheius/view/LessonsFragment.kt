@@ -80,7 +80,7 @@ class LessonsFragment : Fragment() {
                 user = snapchot?.toObject(User::class.java)
                 userScore.text = user?.totalScore.toString()
                 userScore.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lesson, 0, 0, 0)
-                userGreetings.text = activity?.getString(R.string.hello_user, user?.userName)
+                userGreetings.text = activity?.getString(R.string.hello_user, user?.userName?.split(' ')?.get(0))
 
                 if (user?.profileImg != "")
                     Picasso.get().load(user?.profileImg).into(userImage)
