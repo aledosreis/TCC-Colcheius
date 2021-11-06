@@ -106,6 +106,7 @@ class LessonsFragment : Fragment() {
                     ).show()
                 }
             } else {
+                imageGoOn.setImageResource(R.drawable.ic_arrow_forward)
                 imageGoOn.setOnClickListener {
                     val intent = Intent(requireContext(), LessonTheoryActivity::class.java)
                     intent.putExtra("module", position + 1)
