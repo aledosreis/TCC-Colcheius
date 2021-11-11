@@ -102,6 +102,15 @@ class QuestionDataSource {
     fun getModuleTwoQuestions(): MutableList<Question> {
         return  mutableListOf(
             Question(
+                text = "O que são figuras musicais?",
+                answers = listOf(
+                    "São símbolos que representam diferentes durações de sons",
+                    "É o contorno que envolve uma partitura",
+                    "São traços que dividem as notas em um sistema musical",
+                    "São sinais que indicam diferentes timbres na música"
+                )
+            ),
+            Question(
                 text = "Qual figura tem a maior duração?",
                 answers = listOf(
                     "Semibreve",
@@ -134,7 +143,52 @@ class QuestionDataSource {
                     "2",
                     "4",
                     "6",
-                    "Nenhuma das alternativas anteriores"
+                    "Nenhuma das alternativas"
+                )
+            ),
+            Question(
+                text = "A Colcheia é representada por qual número?",
+                answers = listOf(
+                    "8",
+                    "2",
+                    "1",
+                    "4"
+                )
+            ),
+            Question(
+                text = "A Semínima é representada por qual número?",
+                answers = listOf(
+                    "4",
+                    "6",
+                    "8",
+                    "16"
+                )
+            ),
+            Question(
+                text = "Qual propriedade do som permite um som ser grave ou agudo?",
+                answers = listOf(
+                    "Altura",
+                    "Timbre",
+                    "Duração",
+                    "Intensidade"
+                )
+            ),
+            Question(
+                text = "O que faz um som ser agudo?",
+                answers = listOf(
+                    "Uma alta frequência de ondas sonoras",
+                    "A capacidade de alguém gritar fino",
+                    "Uma baixa frequência de ondas sonoras",
+                    "Um falsete de um cantor"
+                )
+            ),
+            Question(
+                text = "Uma baixa frequência de ondas sonoras é considerado um som:",
+                answers = listOf(
+                    "Grave",
+                    "Fraco",
+                    "Irritante",
+                    "Agudo"
                 )
             )
         )

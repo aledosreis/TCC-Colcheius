@@ -40,10 +40,25 @@
         android:layout_marginHorizontal="8dp"
         android:layout_marginTop="16dp"
         android:src="@mipmap/tabela_figuras"
-        app:layout_constraintBottom_toTopOf="@id/btnContinue"
+        app:layout_constraintBottom_toTopOf="@id/text_important"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/content1" />
+
+    <TextView
+        android:id="@+id/text_important"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="8dp"
+        android:text="@string/m2_text_explain_figuras_important"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/btnContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_tbl_figura" />
 
     <Button
         android:id="@+id/btnContinue"
