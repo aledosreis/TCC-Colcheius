@@ -16,6 +16,15 @@ class QuestionDataSource {
                 )
             ),
             Question(
+                text = "Quais são os elementos mais importantes da música?",
+                answers = listOf(
+                    "Melodia, Harmonia e Ritmo",
+                    "Tempo, som e silêncio",
+                    "Intensidade, volume e timbre",
+                    "Altura, velocidade e vibrato"
+                )
+            ),
+            Question(
                 text = "Qual foi a primeira manifestação musical do homem?",
                 answers = listOf(
                     "Ritmo",
@@ -27,10 +36,28 @@ class QuestionDataSource {
             Question(
                 text = "O que é ritmo?",
                 answers = listOf(
-                    "Divisão ordenada do tempo, representa por batidas",
+                    "Divisão ordenada do tempo, representada por batidas",
                     "Combinação de sons que se encaixam perfeitamente",
                     "O melhor amigo do músico",
                     "Todos os sons que possuem tempo e silêncio"
+                )
+            ),
+            Question(
+                text = "O que é o metrônomo?",
+                answers = listOf(
+                    "Instrumento usado para marcar o andamento na música",
+                    "Nenhuma das alternativas",
+                    "Uma propriedade do som",
+                    "Aparelho usado para afinar instrumentos musicais"
+                )
+            ),
+            Question(
+                text = "Quais são as 4 propriedades do som?",
+                answers = listOf(
+                    "Timbre, Duração, Intensidade e Altura",
+                    "Vibrações, ondas, intensidade e velocidade",
+                    "Timbre, volume, Densidade e tempo",
+                    "Ouvido, Cordas vocais, Vibração e Ritmo"
                 )
             ),
             Question(
@@ -40,6 +67,33 @@ class QuestionDataSource {
                     "Melodia",
                     "Altura",
                     "Intensidade"
+                )
+            ),
+            Question(
+                text = "O que é a propriedade de Duração de um som?",
+                answers = listOf(
+                    "propriedade do som ser curto ou longo",
+                    "o quão alto é um som",
+                    "propriedade do som ser forte ou fraco",
+                    "nenhuma das alternativas"
+                )
+            ),
+            Question(
+                text = "Qual propriedade do som o faz ser Grave, Médio ou Agudo?",
+                answers = listOf(
+                    "Altura",
+                    "Timbre",
+                    "Intensidade",
+                    "Duração"
+                )
+            ),
+            Question(
+                text = "O que é a propriedade de Intensidade de um som?",
+                answers = listOf(
+                    "Propriedade do som ser fraco ou forte",
+                    "Propriedade de um som ser estridente ou inaudível",
+                    "Propriedade do som ser curto ou longo",
+                    "Nenhuma das alternativas"
                 )
             )
         )
