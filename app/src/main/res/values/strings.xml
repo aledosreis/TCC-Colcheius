@@ -52,4 +52,5 @@
     <string name="m2_text_explain_grave_agudo">Altura do som é um termo utilizado para definir se um som é agudo ou grave. Sons altos são agudos e sons baixos são graves. O que faz um som ficar agudo ou grave é a frequência do som. Quanto maior a frequência, mais agudo (alto) é o som; e quanto menor a frequência, mais grave (baixo) é o som. Essa frequência corresponde aos ciclos (oscilações por segundo) da onda sonora.</string>
     <string name="m2_text_explain_grave_agudo2"> Como vimos no módulo anterior, se executarmos as teclas de um piano da esquerda para a direita, percebemos que o som começa grave e vai se tornando mais agudo conforme caminhamos pelas teclas até o lado oposto.</string>
     <string name="m2_text_explain_grave_agudo3">Obs: É importante não confundir altura do som com volume (ou intensidade) do som. A intensidade faz o som ser fraco ou forte, independente dele ser grave ou agudo.</string>
+    <string name="m2_text_explain_figuras_important">Vale notar que a Semibreve é a figura de maior duração, enquanto a semifusa é a de menor duração</string>
 </resources>
