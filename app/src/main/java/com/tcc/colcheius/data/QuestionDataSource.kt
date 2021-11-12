@@ -194,4 +194,55 @@ class QuestionDataSource {
         )
 
     }
+
+    fun getModuleThreeQuestions() :MutableList<Question> {
+        return mutableListOf(
+            Question(
+                text = "O que é um compasso?",
+                answers = listOf(
+                    "É o agrupamento de tempos",
+                    "É um instrumento usado para desenhar formas redondas",
+                    "Separação de versos",
+                    "O espaço entre figuras musicais"
+                )
+            ),
+            Question(
+                text = "\"O compasso que agrupa 4 tempos é o ________; o que agrupa 2 tempos é o ______; e o que agrupa 3 tempos é o ______.\"\n" +
+                        "Qual das alternativas abaixo completam, respectivamente, a afirmação acima?",
+                answers = listOf(
+                    "Quaternário; binário; ternário",
+                    "Quaternário; duplo; ternário",
+                    "Quádruplo; binário; terciário",
+                    "Quadrante; bípede; terceiro"
+                )
+            ),
+            Question(
+                text = "O que separa compassos numa partitura é uma linha vertical, chamada:",
+                answers = listOf(
+                    "Barra de compasso",
+                    "Barra dupla",
+                    "Linha de compasso",
+                    "Ritornello"
+                )
+            ),
+            Question(
+                text = "Pra que serve uma Barra final?",
+                answers = listOf(
+                    "Para indicar a conclusão ou finalização de uma partitura",
+                    "Para indicar o fim de uma nota",
+                    "Para mostrar onde respiramos na música",
+                    "Indica separação entre verso e refrão"
+                )
+            ),
+            Question(
+                text = "Para que servem os Sinais de Ritornello?",
+                answers = listOf(
+                    "Para repetir o que há entre dois sinais de Ritornello",
+                    "Para retornar ao início de uma partitura",
+                    "É onde vamos reiniciar a execução de uma música",
+                    "Significa importância do compasso que está entre dois sinais de Ritornello"
+                )
+            )
+        )
+    }
 }

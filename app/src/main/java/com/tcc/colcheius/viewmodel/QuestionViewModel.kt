@@ -61,6 +61,7 @@ class QuestionViewModel(module : Int) : ViewModel() {
         when(module.value) {
             1 -> questions = QuestionDataSource().getModuleOneQuestions()
             2 -> questions = QuestionDataSource().getModuleTwoQuestions()
+            3 -> questions = QuestionDataSource().getModuleThreeQuestions()
         }
     }
 

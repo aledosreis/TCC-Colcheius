@@ -31,7 +31,8 @@ class LessonsFragment : Fragment() {
     private lateinit var adapter: GroupAdapter<ViewHolder>
     private val modules = mutableListOf(
         "Módulo 1",
-        "Módulo 2"
+        "Módulo 2",
+        "Módulo 3"
     )
 
     override fun onCreateView(
