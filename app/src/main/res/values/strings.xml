@@ -53,4 +53,15 @@
     <string name="m2_text_explain_grave_agudo2"> Como vimos no módulo anterior, se executarmos as teclas de um piano da esquerda para a direita, percebemos que o som começa grave e vai se tornando mais agudo conforme caminhamos pelas teclas até o lado oposto.</string>
     <string name="m2_text_explain_grave_agudo3">Obs: É importante não confundir altura do som com volume (ou intensidade) do som. A intensidade faz o som ser fraco ou forte, independente dele ser grave ou agudo.</string>
     <string name="m2_text_explain_figuras_important">Vale notar que a Semibreve é a figura de maior duração, enquanto a semifusa é a de menor duração</string>
+    <!--Módulo3-->
+    <string name="m3_title_Compasso">Compasso</string>
+    <string name="m3_text_explain_compasso">Já sabemos que para determinar o ritmo e a duração das figuras, utilizamos o tempo como medida.
+        \nO compasso é uma forma de agrupar tempos, que podem ser agrupados de 2 em 2 (compasso binário), de 3 em 3 (compasso ternário), de 4 em 4 (compasso quaternário), etc.
+        \nEsses compassos podem ser simples ou compostos.</string>
+    <string name="m3_title_barra_compasso">Barra de Compasso</string>
+    <string name="m3_text_barra_compasso">Para representarmos os compassos na música utilizamos barras de compasso (também chamado de barra simples). O espaço entre duas barras de compasso é o que chamamos de compasso.</string>
+    <string name="m3_text_barra_final">Para concluir (finalizar) uma partitura, utilizamos a barra final.</string>
+    <string name="m3_text_barra_dupla">E para separar certos trechos da música (como separar verso de refrão) utilizamos a barra dupla.</string>
+    <string name="m3_title_ritornello">Ritornello</string>
+    <string name="m3_text_ritornello">O Ritornello serve para indicar uma repetição de certo trecho na música, ou seja, tudo o que estiver entre dois sinais de Ritornello deverá ser tocado novamente. Após repetir o trecho, continua-se tocando os compassos seguintes normalmente.</string>
 </resources>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.tcc.colcheius.R
 import com.tcc.colcheius.view.modulo1.WhatIsMusicTheoryFragment
 import com.tcc.colcheius.view.modulo2.FigurasFragment
+import com.tcc.colcheius.view.modulo3.CompassoFragment
 
 class LessonTheoryActivity : AppCompatActivity() {
 
@@ -18,10 +19,12 @@ class LessonTheoryActivity : AppCompatActivity() {
 
         val whatIsMusicTheoryFragment = WhatIsMusicTheoryFragment()
         val figurasFragment = FigurasFragment()
+        val compassoFragment = CompassoFragment()
 
         when(module) {
             1 -> changeScreen(fragment = whatIsMusicTheoryFragment)
             2 -> changeScreen(fragment = figurasFragment)
+            3 -> changeScreen(fragment = compassoFragment)
         }
     }
 
